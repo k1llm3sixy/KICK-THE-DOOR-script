@@ -8,4 +8,4 @@
 
 [+] Auto skip intro
 
-[+] Fast hide. No need to hide "E"
+[+] Fast hide. No need to hold "E"

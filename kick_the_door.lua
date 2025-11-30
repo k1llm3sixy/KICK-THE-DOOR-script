@@ -7,13 +7,14 @@ local pg = player:WaitForChild("PlayerGui")
 local stuff = {
     remotes = {
         ["Escape"] = rs.Packages._Index["sleitnick_knit@1.5.1"].knit.Services.EscapeService.RF:FindFirstChild("Escape"),
-        ["KickDoor"] = player.Backpack.Kick:FindFirstChild("Hitbox"),
+        ["KickDoor"] = {},
         ["SkipIntro"] = rs:FindFirstChild("Remotes"):FindFirstChild("SkipIntro")
     },
     map = {
         ["ExitHighlight"] = workspace:FindFirstChild("Exit"):FindFirstChild("Highlight"),
         ["EscapeDoor"] = workspace:FindFirstChild("MainDoor"):FindFirstChild("Main"),
         ["HideSpots"] = workspace:FindFirstChild("Hide"),
+        ["HidePrompts"] = {}
     },
     gui = {
         ["KickText"] = pg:FindFirstChild("Main"):FindFirstChild("Kick"),
@@ -79,6 +80,9 @@ addToggle(mainTab, "Auto escape", nil, false, function(state)
 end)
 
 function kickDoor()
+    local tool = player.Backpack:FindFirstChild("Kick") or player.Character:FindFirstChild("Kick")
+    stuff.remotes.KickDoor = tool and tool:FindFirstChild("Hitbox")
+
     if stuff.gui.KickText.Text ~= "KICKS: 40/40" and stuff.cfg.autoKick then
         task.wait(2.1)
         stuff.remotes.KickDoor:FireServer(stuff.map.EscapeDoor)

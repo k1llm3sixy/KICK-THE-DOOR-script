@@ -1,0 +1,1 @@
+# KICK-THE-DOOR-script

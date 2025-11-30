@@ -14,7 +14,6 @@ local stuff = {
         ["ExitHighlight"] = workspace:FindFirstChild("Exit"):FindFirstChild("Highlight"),
         ["EscapeDoor"] = workspace:FindFirstChild("MainDoor"):FindFirstChild("Main"),
         ["HideSpots"] = workspace:FindFirstChild("Hide"),
-        ["HidePrompts"] = {}
     },
     gui = {
         ["KickText"] = pg:FindFirstChild("Main"):FindFirstChild("Kick"),
